@@ -1,0 +1,60 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Assignment3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Student stu1 = new Student()
+            {
+                ID = 0,
+                Name = "Umar",
+                City = "Lahore",
+                CGPA = 3.11
+            };
+
+            Student stu2 = new Student()
+            {
+                ID = 1,
+                Name = "mar",
+                City = "ahore",
+                CGPA = 2.11
+            }; 
+            
+            Student stu3 = new Student()
+            {
+                ID = 2,
+                Name = "ar",
+                City = "hore",
+                CGPA = 1.11
+            };
+
+            Dictionary<int, Student> dictStu = new Dictionary<int, Student>();
+            dictStu.Add(stu1.ID, stu1);
+            dictStu.Add(stu2.ID, stu2);
+            dictStu.Add(stu3.ID, stu3);
+
+         
+            
+           if (dictStu[0].CGPA>2)
+            {
+                Console.WriteLine("name = {0}  CGPA = {1}", dictStu[0].Name, dictStu[0].CGPA);
+                
+            }
+            Console.ReadLine();
+        }
+    }
+
+    public class Student
+    {
+        public int ID { get;  set; }
+        public string Name { get; set; }
+        public string City { get; set; }
+        public double CGPA { get; set; }
+    }
+}
